@@ -24,7 +24,7 @@ class Book(Model):
         get_book_query = "SELECT * FROM books ORDER BY id DESC LIMIT 1"
         book = self.db.query_db(get_book_query)
         # print book
-        insert_review_query = "INSERT INTO reviews (review, rating, created_at, updated_at, user_id, book_id) VALUES ('{}','{}',NOW(),NOW(),'{}','{}')".format(book_info['review'], book_info['rating'],user[0]['id'], book[0]['id'])
+        insert_review_query = "INSERT INTO reviews (review, rating, created_at, updated_at, user_id, book_id) VALUES ('{}','{}',NOW(),NOW(),'{}','{}')".format(book_info['review'], book_info['rating'],user_id, book[0]['id'])
         self.db.query_db(insert_review_query)
         print book[0]['id']
         return book[0]['id']
