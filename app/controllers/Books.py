@@ -13,7 +13,7 @@ class Books(Controller):
         book_info = request.form
         user_id = session['id']
         result = self.models['Book'].create_book(user_id,book_info)
-        return redirect('/books/'+str(result))
+        return redirect('/books/new')
 
     def show(self, id):
         #showing info of book and its reviews
