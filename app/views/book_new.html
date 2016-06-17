@@ -4,9 +4,14 @@
     <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
 </head>
 <body>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="/user">Home</a></li>
+            <li role="presentation"><a href="/user/logout">Logout</a></li>
+
+        </ul>
 
 
-    <h3>>Pagan Book Reviews</h3> 
+    <h3>Pagan Book Reviews</h3> 
 
                         {% if session['id'] %}
                 <h3>Welcome {{ session['name'] }} </h3>
@@ -16,7 +21,7 @@
                     
                     {% endif %}
 
-        <a href="/user/logout">Sign out</a>
+
         </div>
     <div id="form">
         <h2 class="header"> Add a Witchy Review </h2>

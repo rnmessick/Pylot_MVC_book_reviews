@@ -11,8 +11,12 @@
 
                     {% if session['id'] %}
                    <h2>Welcome {{ session['name'] }}</h2> 
-                            <li><a href="/user/logout">Sign out</a></li>
-                        </ul>
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="/user">Home</a></li>
+            <li role="presentation"><a href="/user/logout">Logout</a></li>
+ 
+        </ul>
+
                     </li>
                     {% endif %}
                 </ul>
