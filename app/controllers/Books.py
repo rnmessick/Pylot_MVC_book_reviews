@@ -14,7 +14,7 @@ class Books(Controller):
         user_id = session['id']
         book_id = session['id']
         result = self.models['Book'].create_book(user_id,book_info)
-        return redirect('/user')
+        return redirect('/books/'+str(result))
 
     def show(self, id):
         #showing info of book and its reviews
