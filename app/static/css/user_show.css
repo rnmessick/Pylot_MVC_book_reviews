@@ -1,0 +1,41 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+
+    color: #333;
+    background-color: #d0c5e4;
+
+}
+
+#page-wrap {
+    width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    background-color : #99CCFF;
+    text-align: center;
+}
+
+#profile {
+    display: inline;
+
+}
+    #profile h2 {
+        padding: 5px 5px;
+    }
+
+#reviews {
+    vertical-align: top;
+    margin-left:50px;
+    display: inline-block;
+
+}
+
+#sub_reviews {
+    border: 2px solid black;
+    height:200px;
+    padding: 10px 10px;
+}
+#sub_reviews a {
+    color:black;
+    font-weight: bold;
+}

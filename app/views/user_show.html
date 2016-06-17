@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book Reviews</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/user_show.css" type="text/css">
+  </head>
+  <body>
+  <div id="page-wrap">
+
+
+
+          <ul class="nav nav-tabs">
+            <li role="presentation"><a href="/user">Home</a></li>
+            <li role="presentation"><a href="/books/new">Add Book and Review</a></li>
+            <li role="presentation"><a href="/user/logout">Logout</a></li>
+
+          </ul>
+
+
+        <div id="profile">
+          <h2>Alias: {{user_info['alias']}}</h2>         
+          <h2>Name: {{user_info['name']}} </h2>
+          <h2>Email: {{user_info['email']}}</h2>
+          <h2>Total Reviews: {{total_reviews['total_reviews']}}</h2>
+          
+        </div>
+
+        <div id="reviews">
+            <h3>Posted Reviews on these books:</h3>
+                <div id="sub_reviews">
+                    {% for reviews in review_titles %}
+                        <p> <a href="/books/{{reviews['id']}}">{{reviews['title']}}</a> </p>
+                    {% endfor %}
+                </div>
+        </div>
+
+
+ 
+   
+  </div>
+</body>
+</html>

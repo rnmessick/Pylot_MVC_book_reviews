@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pagan Book Club</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+      <div class="container">
+
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="/user">Home</a></li>
+            <li role="presentation"><a href="/user/logout">Logout</a></li>
+            <li role="presentation"><a href="/books/new">Add Book and Review</a></li> 
+        </ul>
+          
+        <section id="reviews">
+            <div id="recent_reviews">
+                <div class="row">
+                    <div class="col-lg-12 text-center">
+                        <h3 id="recent_heading" class="section-heading"> Recent Book Reviews: </h3>
+                    </div>
+                </div>   
+                <div id="review_blocks">
+                {% for rev in recent_reviews %}
+                    <div class="reviews">
+                       <h3><a href="/books/{{rev['id']}}">{{rev['title']}}</a></h3> 
+                        <h4>Rating:{{rev['rating']}} stars</h4>
+                        <h4><a href="/users/{{rev['user_id']}}">{{rev['name']}} </a>says: {{rev['review']}}</h4>
+                        <h4>Posted on: {{rev['created_at']}}</h4>
+                    </div>
+                {% endfor %}
+                </div>
+          
+        </section>
+    <section>
+            <div id="form">
+            <h2 class="header"> Add a Witchy Review </h2>
+            <form action = "/books/create" method="post">
+                <input type="text" name="title" placeholder="Book Title">            
+                <input type="text" name="author" placeholder="Author">
+                <textarea name="review" class="form-control" rowe='4' placeholder="Tell us about your magical read here!"></textarea>
+                <label for="rating">Rating:</label>
+                    <select name="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                <input type="submit" value="Add Book and Review">
+            </form>
+        </section>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,61 @@
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+
+    color: #333;
+    background-color: #d0c5e4;
+
+}
+
+#page-wrap {
+    height: 400px;
+     width: 1000px;
+     margin: 0 auto;
+    background-color : #99CCFF;
+    text-align: center;
+}
+.heading h3, a{
+    margin-left: 100px;
+}
+
+
+h1, h2{
+    color : #000000;
+    text-align : center;
+
+}
+form {
+    width: 300px;
+    margin: 0 auto;
+}
+
+input {
+  display: block;
+  margin: 5px;
+}
+
+section {
+  display: inline-block;
+
+}
+#review_blocks {
+text-align: left;
+}
+.reviews {
+  border: 1px solid black;
+  display: block;
+  width: 500px;
+  text-align: left;
+  padding: 10px;
+  margin: 5px;
+
+}
+
+#box {
+  font-weight: bold;
+  text-align: center;
+}
+
+#main {
+  margin: 30px;
+}

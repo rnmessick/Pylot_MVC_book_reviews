@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Pagan Book Club</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+
+
+                    {% if session['id'] %}
+                   <h2>Welcome {{ session['name'] }}</h2> 
+                            <li><a href="/user/logout">Sign out</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div>
+    </nav>
+
+    <div id="main">
+        <h3 class="header">{{book_info['title']}}</h3>
+        <h4 class="header">Author: {{book_info['name']}}</h4>
+        <h3>Reviews:</h3>
+        {% for rev in reviews %}
+            <p>Rating:{{rev['rating']}}</p>
+            <p><a href="/users/{{rev['id']}}">{{rev['name']}}</a> says: {{rev['review']}}</p>
+            <p>{{rev['created_at']}}</p>
+            {% if session['id'] == rev['id'] %}
+
+            {% endif %}
+            <hr>
+        {% endfor %}
+    </div>
+
+ <div id="form">
+        <h2 class="header"> Add a Witchy Review </h2>
+        <form action = "/books/create" method="post">
+            <!-- <label for ="title">Book Title:</label> -->
+            <input type="text" name="title" placeholder="Book Title">
+            <!-- <label for="author">Author:</label> -->
+            <input type="text" name="author" placeholder="Author">
+            <!-- <label for="review">Review:</label> -->
+            <textarea name="review" class="form-control" rowe='4' placeholder="Tell us about your magical read here!"></textarea>
+            <label for="rating">Rating:</label>
+                <select name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            <input type="submit" value="Add Book and Review">
+        </form>
+    </div>
+</body>
+</html>
